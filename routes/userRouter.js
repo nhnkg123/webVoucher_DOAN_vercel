@@ -1,6 +1,5 @@
 let express = require('express');
 let router = express.Router();
-let {conn, sql} = require('./connectSQL');
 let bcrypt = require('bcrypt');
 const axios = require('axios');
 
