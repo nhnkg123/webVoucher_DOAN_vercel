@@ -1,0 +1,111 @@
+
+
+        <!-- –––––––––––––––[ PAGE CONTENT ]––––––––––––––– -->
+        <main id="mainContent" class="main-content">
+            <div class="page-container ptb-60">
+                <div class="container">
+                    <div class="row row-rl-10 row-tb-20">
+                        <div class="page-content col-xs-12 col-md-10">
+
+
+                            <section class="section deals-area">
+
+                                <!-- Page Control -->
+                                <header class="page-control panel ptb-15 prl-20 pos-r mb-30">
+
+                                    <!-- List Control View -->
+                                    <ul class="list-control-view list-inline">
+                                        <li><a href="/ChienDich?list=1"><i class="fa fa-bars"></i></a>
+                                        </li>
+                                        <li><a href="/ChienDich?grid=1"><i class="fa fa-th"></i></a>
+                                        </li>
+                                    </ul>
+                                    <!-- End List Control View -->
+
+                                    <div class="right-10 pos-tb-center">
+                                        <select class="form-control input-sm">
+                                            <option>SORT BY</option>
+                                            <option>Newest items</option>
+                                        </select>
+                                    </div>
+                                </header>
+                                <!-- End Page Control -->
+                                <div class="row row-tb-20">
+                                    {{#each ChienDich}}
+                                    <div class="col-xs-12">
+                                        <div class="deal-single panel">
+                                            <div class="row row-rl-0 row-sm-cell">
+                                                <div class="col-sm-5">
+                                                    <figure class="deal-thumbnail embed-responsive embed-responsive-16by9 "
+                                                        data-bg-img="{{imgPath}}">
+                                                        <div class="label-discount left-20 top-15">%</div>
+                                                        
+                                                        <div class="time-left bottom-15 right-20 font-md-14 is-hidden-md-up is-hidden-md-down">
+                                                            <span>
+                                                                <i class="ico fa fa-clock-o mr-10"></i>
+                                                                <span class="t-uppercase" data-countdown="2019/09/01 01:30:00"></span>
+                                                            </span>
+                                                        </div>
+                                                    </figure>
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    <div class="bg-white pt-20 pl-20 pr-15">
+                                                        <div class="pr-md-10">
+                                                            
+                                                            <h3 class="deal-title mb-10">
+                                                                <a href="/ChienDich/{{MaChienDich}}">{{TieuDe}}</a>
+                                                            </h3>
+                                                            <ul class="deal-meta list-inline mb-10 color-mid">
+                                                                <li><i class="ico fa fa-map-marker mr-10"></i>Thời gian bắt đầu: {{ThoiGianBatDau}}</li>
+                                                            </ul>
+                                                            <p class="text-muted mb-20">{{MoTa}}</p>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{/each}}
+                                    
+                                </div>
+
+                                <!-- Page Pagination -->
+                                <div class="page-pagination text-center mt-30 p-10 panel">
+                                    <nav>
+                                        <!-- Page Pagination -->
+                                        <ul class="page-pagination">
+                                            <li><a class="page-numbers previous" href="#">Previous</a>
+                                            </li>
+                                            <li><a href="#" class="page-numbers">1</a>
+                                            </li>
+                                            <li><span class="page-numbers current">2</span>
+                                            </li>
+                                            <li><a href="#" class="page-numbers">3</a>
+                                            </li>
+                                            <li><a href="#" class="page-numbers">4</a>
+                                            </li>
+                                            <li><span class="page-numbers dots">...</span>
+                                            </li>
+                                            <li><a href="#" class="page-numbers">20</a>
+                                            </li>
+                                            <li><a href="#" class="page-numbers next">Next</a>
+                                            </li>
+                                        </ul>
+                                        <!-- End Page Pagination -->
+                                    </nav>
+                                </div>
+                                <!-- End Page Pagination -->
+
+                            </section>
+
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+
+
+        </main>
+        

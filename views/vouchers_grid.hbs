@@ -1,0 +1,217 @@
+
+
+        <!-- –––––––––––––––[ PAGE CONTENT ]––––––––––––––– -->
+        <main id="mainContent" class="main-content">
+            <div class="page-container ptb-60">
+                <div class="container">
+
+                    <!-- Coupons Area -->
+                    <div class="section coupons-area coupons-area-grid">
+
+                        <!-- Page Control -->
+                        <header class="page-control panel ptb-15 prl-20 pos-r mb-30">
+
+                            <!-- List Control View -->
+                            <ul class="list-control-view list-inline">
+                                <li><a href="/vouchers"><i class="fa fa-bars"></i></a>
+                                </li>
+                                <li><a href="/vouchers"><i class="fa fa-th"></i></a>
+                                </li>
+                            </ul>
+                            <!-- End List Control View -->
+
+                            <div class="right-10 pos-tb-center">
+                                <select id="sort" class="form-control input-sm" onchange="setParams('sort', this.value)">
+                                    <option value="sortBy">SORT BY</option>
+                                    <option  value="NewestItems">Newest items</option>
+                                </select>
+                            </div>
+                        </header>
+                        <!-- End Page Control -->
+                        {{#with UsernameNotExist}}
+                            <div class="col-md-12 form-group alert {{type}}">
+                                <strong>{{{message}}}</strong>
+                            </div>
+                            {{/with}} 
+                        <div class="row row-masnory row-tb-20">
+                            {{#each vouchers}}
+                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                <div class="coupon-single panel t-center">
+                                    <!--
+                                                                <div class="ribbon-wrapper is-hidden-xs-down">
+                                                                    <div class="ribbon">Featured</div>
+                                                                </div>
+                                                                -->
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="text-center p-20">
+                                                <img class="store-logo" src="{{imgPath}}" alt="">
+                                            </div>
+                                            <!-- end media -->
+                                        </div>
+                                        <!-- end col -->
+                            
+                                        <div class="col-xs-12">
+                                            <div class="panel-body">
+                                                <ul class="deal-meta list-inline mb-10">
+                                                    <h2 class="color-green"><Strong>VOUCHER</Strong></h2>
+                                                </ul>
+                                                <h4 class="color-green mb-10 t-uppercase">DISCOUNT {{TiLeGiamGia}}% </h4>
+                                                <h6 class="deal-title mb-10">
+                                                    <a href="#">{{TenDoiTac}}</a>
+                                                </h6>
+                                                <h6 class="deal-title mb-10">
+                                                    <a href="#">{{TieuDe}}</a>
+                                                </h6>
+                                                <div class=" color-muted  font-6"><i class="lnr lnr-clock mr-10"></i>Ngày Tạo: {{ThoiHanTuFormat}}</div>
+                                                <div class="mb-15 color-muted mb-20 font-6"><i class="lnr lnr-clock mr-10"></i>Ngày hết hạn: 
+                                                    {{ThoiHanDenFormat}}</div>
+                                                <div class="showcode">
+                                                    <button class=" btn btn-sm btn-block" data-toggle="modal"
+                                                        data-target="#coupon_01{{IDVoucher}}">LẤY MÃ VOUCHER</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end col -->
+                                    </div>
+                                    <!-- end row -->
+                                </div>
+                            
+                                <div class="modal fade get-coupon-area" tabindex="-1" role="dialog" id="coupon_01{{IDVoucher}}">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content panel">
+                                            <div class="modal-body">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                                        aria-hidden="true">&times;</span>
+                                                </button>
+                                                <div class="row row-v-10">
+                                                    <div class="col-md-10 col-md-offset-1">
+                                                        <img src="{{imgPath}}" alt="">
+                                                        <h5 class="deal-title mb-10">
+                                                            <a href="#">{{TieuDe}}</a>
+                                                        </h5>
+                                                        <ul class="deal-meta list-inline mb-10">
+                                                            <h2 class="color-green"><Strong>VOUCHER</Strong></h2>
+                                                        </ul>
+                                                        <h5 class="mb-20">DISCOUNT {{TiLeGiamGia}}%</h5>
+                                                        <p class="color-mid">{{NoiDung}}</p>
+                                                    </div>
+                                                    <div class="col-md-10 col-md-offset-1">
+                                                        <div class=" color-muted  font-6"><strong>Ngày Tạo:</strong> {{ThoiHanTuFormat}}</div>
+                                                    </div>
+                                                    <div class="col-md-10 col-md-offset-1">
+                                                        <div class="mb-15 color-muted mb-20 font-6"><strong>Ngày hết hạn:</strong> 
+                                                    {{ThoiHanDenFormat}}</div>
+                                                    </div>
+                                                    <h6 class=" col-md-10 col-md-offset-1">
+                                                        <a href="#"><strong>{{TenDoiTac}}</strong></a>
+                                                    </h6>
+                                                    <div class="col-md-10 col-md-offset-1">
+                                                        <a href="/DoiTac/{{MaDoiTac}}" class="btn btn-link">Visit Our Store</a>
+                                                    </div>
+                                                    <div class="col-md-10 col-md-offset-1">
+                                                        <h6 class="color-mid t-uppercase">Click để lấy mã Voucher của bạn</h6>
+                                                        <a href="#" target="_blank" class="coupon-code">{{RandomString}}</a>
+                                                    </div>
+                                                    <div class="col-md-10 col-md-offset-1">
+                                                        <a href="/vouchers?IDVoucher={{IDVoucher}}" class="btn ">Share this Voucher</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+
+                            {{#with alert}}
+                            <div class="col-md-12 form-group alert {{type}}">
+								<strong>{{{message}}}</strong>
+							</div>
+                            {{/with}}
+
+                            <!-- Share coupon -->
+                            <div class="modal fade get-coupon-area" tabindex="-1" role="dialog" id="share_coupon">
+                                <div class="modal-dialog">
+                                    <div class="modal-content panel">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form class="search-form" action="/vouchers" method="POST">
+                                                <div >
+                                                    <input type="text" class="form-control input-lg search-input" placeholder="Nhập username cần share ..."
+                                                        name="ShareUsername"  id="keyword" required>
+                                                </div>
+                                                <div>
+                                                    <div class=" mt-20">
+                                                        <button type="submit" class="btn btn-lg btn-search ">Share</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                            
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Page Pagination -->
+                        <div class="page-pagination text-center mt-30 p-10 panel">
+                            <nav>
+                                <!-- Page Pagination -->
+                                <ul class="page-pagination">
+                                    <li><a class="page-numbers previous" href="#">Previous</a>
+                                    </li>
+                                    <li><a href="#" class="page-numbers">1</a>
+                                    </li>
+                                    <li><span class="page-numbers current">2</span>
+                                    </li>
+                                    <li><a href="#" class="page-numbers">3</a>
+                                    </li>
+                                    <li><a href="#" class="page-numbers">4</a>
+                                    </li>
+                                    <li><span class="page-numbers dots">...</span>
+                                    </li>
+                                    <li><a href="#" class="page-numbers">20</a>
+                                    </li>
+                                    <li><a href="#" class="page-numbers next">Next</a>
+                                    </li>
+                                </ul>
+                                <!-- End Page Pagination -->
+                            </nav>
+                        </div>
+                        <!-- End Page Pagination -->
+                    </div>
+                    <!-- End Coupons Area -->
+
+                </div>
+            </div>
+
+
+        </main>
+
+        <script>
+            let urlParams = new URLSearchParams(location.search);
+            if(urlParams.has("IDVoucher")) {
+                document.addEventListener('DOMContentLoaded', function () {
+                $('#share_coupon').modal('show');
+            });
+            }
+            
+
+            function setParams(key, value) {
+                console.log(value);
+                let urlParams = new URLSearchParams(location.search);
+                if (value == 'NewestItems') {
+                    let url = "/vouchers?sort=1";
+                    location.href = url;
+                    $('#sort').val(value);
+                    document.getElementById('#sort').value = value;
+                }
+            }
+        </script>
+ 

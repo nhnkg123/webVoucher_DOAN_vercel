@@ -1,0 +1,136 @@
+        <!-- –––––––––––––––[ HEADER ]––––––––––––––– -->
+        <header id="mainHeader" class="main-header">
+
+            <!-- Top Bar -->
+            <div class="top-bar bg-gray">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-4 is-hidden-sm-down">
+                            <ul class="nav-top nav-top-left list-inline t-left">
+                                <li><a href="terms_conditions.html"><i class="fa fa-question-circle"></i>Discounts Guide</a>
+                                </li>
+                                <li><a href="faq.html"><i class="fa fa-support"></i>Customer Assistance</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-12 col-md-8">
+                            <ul class="nav-top nav-top-right list-inline t-xs-center t-md-right">
+                                
+                                {{#if isLoggedIn}}
+                                <li><a>Xin chào {{username}} </a>
+                                </li>
+                                <li><a href="/users/logout"><i class="fa fa-lock"></i>Sign Out</a>
+                                </li>
+                                {{else}}
+                                <li><a href="/users/login"><i class="fa fa-lock"></i>Sign In</a>
+                                </li>
+                                <li><a href="/users/register"><i class="fa fa-user"></i>Sign Up</a>
+                                </li>
+                                {{/if}}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Top Bar -->
+
+            <!-- Header Header -->
+            <div class="header-header bg-white">
+                <div class="container">
+                    <div class="row row-rl-0 row-tb-20 row-md-cell">
+                        <div class="brand col-md-4 t-xs-center t-md-left valign-middle form-inline">
+                            <a href="/" class="logo form-group">
+                                <img src="/assets/images/logoCopy.png" alt="" width="70">
+                                
+                            </a>
+                            <h3 class="form-group" style="color: #2ed87b; font-size:3rem;font-family:cursive"><strong> VOUCHER HOT</strong></h3>
+                        </div>
+                        <div class="header-search col-md-9">
+                            <div class="row row-tb-10 ">
+                                <div class="col-sm-8">
+                                    <form class="search-form" action="/ChienDich" method="POST">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control input-lg search-input" placeholder="Tìm kiếm Chiến Dịch ..."  name="keyword" id="keyword">
+                                            <div class="input-group-btn">
+                                                <div class="input-group">
+                                                    
+                                                    <div class="input-group-btn">
+                                                        <button type="submit" class="btn btn-lg btn-search btn-block">
+                                                            <i class="fa fa-search font-16"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Header Header -->
+
+            <!-- Header Menu -->
+            <div class="header-menu bg-blue">
+                <div class="container">
+                    <nav class="nav-bar">
+                        <div class="nav-header">
+                            <span class="nav-toggle" data-toggle="#header-navbar">
+		                        <i></i>
+		                        <i></i>
+		                        <i></i>
+		                    </span>
+                        </div>
+                        <div id="header-navbar" class="nav-collapse">
+                            <ul id="navHeader" class="nav-menu">
+                                <li class="nav_item">
+                                    <a class="nav_link" href="/" >Home</a>
+                                </li>
+                                <li class="nav_item">
+                                    <a class="nav_link" href="/ChienDich?grid=1">Chiến Dịch</a>
+                                    
+                                </li>
+                                <li class="nav_item">
+                                    <a class="nav_link" href="/vouchers">Vouchers</a>
+                                    
+                                </li>
+                                <li class="nav_item">
+                                    <a class="nav_link" href="/DoiTac">Đối Tác</a>
+                                    
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <!-- End Header Menu -->
+
+        </header>
+        <!-- –––––––––––––––[ HEADER ]––––––––––––––– -->
+
+        <script>
+            
+            const navItems = document.querySelectorAll('.nav_item');
+            const windowPathname = window.location.pathname;
+            navItems.forEach(navItemEl => {
+                console.log(windowPathname);
+
+                const navLinkPathname = new URL(navItemEl.querySelectorAll('.nav_link')[0].href).pathname;
+                if (windowPathname === navLinkPathname) {
+                    navItemEl.classList.add('active');
+                }
+            
+                
+            });
+
+            /*
+            var btn = document.getElementsByClassName("ChienDich")[0].addEventListener("click", function() {
+                console.log("da click");
+                var current = document.getElementsByClassName("Home active");
+                current.className = current.className.replace("active", "");
+                this.className += " active";
+            });
+            */
+        </script>

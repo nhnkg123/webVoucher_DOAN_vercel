@@ -1,0 +1,260 @@
+
+
+        <!-- –––––––––––––––[ PAGE CONTENT ]––––––––––––––– -->
+        <main id="mainContent" class="main-content">
+            <!-- Page Container -->
+            <div class="page-container ptb-60">
+                <div class="container">
+                    <div class="row row-rl-10 row-tb-20">
+                        <div class="page-sidebar col-sm-4 col-md-3">
+                            <aside class="store-header-area panel t-center">
+                                {{#with ChiTietDoiTac}}
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <figure class="pt-10 pl-10 mr-10">
+                                            <img src="/assets/images/DoiTac/{{imgPath}}" alt="">
+                                        </figure>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="store-about ptb-30 prl-10">
+                                            <h3 class="mb-10">{{TenDoiTac}}</h3>
+                                            
+                                            <p class="mb-15">{{MoTa}}</p>
+                                            <button class="btn btn-info">FOLLOW</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="store-splitter-left">
+                                            <header class="left-splitter-header prl-10 ptb-20 bg-lighter">
+                                                <div class="row">
+                                                    <div class="col-xs-6">
+                                                        <h2>{{SLCDDoiTac}}</h2>
+                                                        <p>Số lượng Chiến Dịch</p>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <h2>{{SLVoucherDoiTac}}</h2>
+                                                        <p>Số lượng Voucher</p>
+                                                    </div>
+                                                </div>
+                                            </header>
+                                            <div class="left-splitter-body prl-20 ptb-20">
+                                                <div class="row row-rl-10 row-tb-10">
+                                                    <div class="col-md-6 col-sm-4 col-xs-6">
+                                                        <img src="assets/images/products/thumb_01.jpg" alt="">
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-4 col-xs-6">
+                                                        <img src="assets/images/products/thumb_02.jpg" alt="">
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-4 col-xs-6">
+                                                        <img src="assets/images/products/thumb_03.jpg" alt="">
+                                                    </div>
+                                                    <div class="col-md-6 col-sm-4 col-xs-6">
+                                                        <img src="assets/images/products/thumb_04.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <footer class="left-splitter-social prl-20 ptb-20">
+                                                <ul class="list-inline social-icons social-icons--colored t-center">
+                                                    <li class="social-icons__item">
+                                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                                    </li>
+                                                    <li class="social-icons__item">
+                                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                                    </li>
+                                                    <li class="social-icons__item">
+                                                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                                                    </li>
+                                                    <li class="social-icons__item">
+                                                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </footer>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{/with}}
+                            </aside>
+                        </div>
+                        <div class="page-content col-sm-8 col-md-9">
+
+                            <!-- Store Tabs Area -->
+                            <div class="section store-tabs-area">
+                                <div class="tabs tabs-v1">
+                                    <!-- Nav tabs -->
+                                    <ul class="nav nav-tabs panel" role="tablist">
+                                        <li role="presentation" class="active">
+                                            <a href="#deals" aria-controls="deals" role="tab" data-toggle="tab" aria-expanded="false"><i class="fa fa-comment mr-10"></i>Chiến Dịch</a>
+                                        </li>
+                                        <li role="presentation">
+                                            <a href="#coupons" aria-controls="coupons" role="tab" data-toggle="tab" aria-expanded="true"><i class="fa fa-star mr-10"></i>Vouchers</a>
+                                        </li>
+                                    </ul>
+
+                                    <!-- Tab panes -->
+                                    <div class="tab-content">
+                                        <div role="tabpanel" class="tab-pane ptb-20 active" id="deals">
+                                            <section class="section deals-area">
+                                                <div class="row row-masnory row-tb-20">
+                                                    {{#each DSChienDich}}
+                                                    <div class="col-sm-12 col-lg-6">
+                                                        <div class="deal-single panel">
+                                                            <figure class="deal-thumbnail embed-responsive embed-responsive-16by9"
+                                                                data-bg-img="/assets/images/ChienDich/{{imgPath}}">
+                                                                <div class="label-discount right-15 top-15">%</div>
+                                                                
+                                                                <div class="deal-store-logo">
+                                                                    <img src="" alt="">
+                                                                </div>
+                                                            </figure>
+                                                            <div class="bg-white pt-20 pl-20 pr-15">
+                                                                <div class="pr-md-10">
+                                                                    <h3 class="deal-title mb-10">
+                                                                        <a href="/ChienDich/{{MaChienDich}}">{{TieuDe}}</a>
+                                                                    </h3>
+                                                                    <p class="text-muted mb-20">Thời gian bắt đầu: {{ThoiGianBatDau}}</p>
+                                                                    <p class="text-muted mb-20">{{MoTa}}</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {{/each}}
+                                                </div>
+                                            </section>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane ptb-20" id="coupons">
+                                            <section class="section coupons-area coupons-area-grid">
+                                                <div class="row row-masnory row-tb-20">
+                                                    {{#if isLoggedIn}}
+                                                    {{#each VoucherCDNguoiDung}}
+
+                                                    <div class="col-sm-6">
+                                                        <div class="coupon-single panel t-center">
+                                                            <div class="row">
+                                                                <div class="col-xs-12">
+                                                                    <div class="text-center p-20">
+                                                                        <img class="store-logo" src="assets/images/coupons/coupon_07.jpg" alt="">
+                                                                    </div>
+                                                                    <!-- end media -->
+                                                                </div>
+                                                                <!-- end col -->
+                                                    
+                                                                <div class="col-xs-12">
+                                                                    <div class="panel-body">
+                                                                        <ul class="deal-meta list-inline mb-10">
+                                                                            <h2 class="color-green"><Strong>VOUCHER</Strong></h2>
+                                                                        </ul>
+                                                                        <h6 class="color-green mb-10 t-uppercase">DISCOUNT {{TiLeGiamGia}}%</h6>
+                                                                        <h6 class="deal-title mb-10">
+                                                                            <a href="#">{{TenDoiTac}}</a>
+                                                                        </h6>
+                                                                        <div class=" color-muted  font-6" style="size: 3rem;"><i class="lnr lnr-clock mr-10"></i>Ngày Tạo: {{ThoiHanTuFormat}}
+                                                                        </div>
+                                                                        <div class="mb-15 color-muted mb-20 font-6"><i class="lnr lnr-clock mr-10"></i>Ngày hết hạn:
+                                                                            {{ThoiHanDenFormat}}</div>
+                                                                        <div class="showcode">
+                                                                            <button class=" btn btn-sm btn-block" data-toggle="modal" data-target="#coupon_07">LẤY MÃ VOUCHER</button>
+                                                                            
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- end col -->
+                                                            </div>
+                                                            <!-- end row -->
+                                                        </div>
+                                                    
+                                                        <div class="modal fade get-coupon-area" tabindex="-1" role="dialog" id="coupon_07">
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content panel">
+                                                                    <div class="modal-body">
+                                                                        
+                                                                        <div class="row row-v-10">
+                                                                            <div class="modal-body">
+                                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                                                                                </button>
+                                                                                <div class="row row-v-10">
+                                                                                    <div class="col-md-10 col-md-offset-1">
+                                                                                        <img src="{{imgPath}}" alt="">
+                                                                                        <h5 class="deal-title mb-10">
+                                                                                            <a href="#">{{TieuDe}}</a>
+                                                                                        </h5>
+                                                                                        <ul class="deal-meta list-inline mb-10">
+                                                                                            <h2 class="color-green"><Strong>VOUCHER</Strong></h2>
+                                                                                        </ul>
+                                                                                        <h5 class="mb-20">DISCOUNT {{TiLeGiamGia}}%</h5>
+                                                                                        <p class="color-mid">{{NoiDung}}</p>
+                                                                                    </div>
+                                                                                    <div class="col-md-10 col-md-offset-1">
+                                                                                        <div class=" color-muted  font-6"><strong>Ngày Tạo:</strong> {{ThoiHanTuFormat}}</div>
+                                                                                    </div>
+                                                                                    <div class="col-md-10 col-md-offset-1">
+                                                                                        <div class="mb-15 color-muted mb-20 font-6"><strong>Ngày hết hạn:</strong>
+                                                                                            {{ThoiHanDenFormat}}</div>
+                                                                                    </div>
+                                                                                    <h6 class=" col-md-10 col-md-offset-1">
+                                                                                        <a href="#"><strong>{{TenDoiTac}}</strong></a>
+                                                                                    </h6>
+                                                                                    <div class="col-md-10 col-md-offset-1">
+                                                                                        <a href="/DoiTac/{{MaDoiTac}}" class="btn btn-link">Visit Our Store</a>
+                                                                                    </div>
+                                                                                    <div class="col-md-10 col-md-offset-1">
+                                                                                        <h6 class="color-mid t-uppercase">Click để lấy mã Voucher của bạn</h6>
+                                                                                        <a href="#" target="_blank" class="coupon-code">{{RandomString}}</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    {{/each}}
+                                                    {{else}}
+                                                    <div class="alert alert-danger">Bạn cần đăng nhập để thấy danh sách voucher</div>
+                                                    {{/if}}
+                                                </div>
+
+                                                <!-- Page Pagination -->
+                                                <div class="page-pagination text-center mt-30 p-10 panel">
+                                                    <nav>
+                                                        <!-- Page Pagination -->
+                                                        <ul class="page-pagination">
+                                                            <li><a class="page-numbers previous" href="#">Previous</a>
+                                                            </li>
+                                                            <li><a href="#" class="page-numbers">1</a>
+                                                            </li>
+                                                            <li><span class="page-numbers current">2</span>
+                                                            </li>
+                                                            <li><a href="#" class="page-numbers">3</a>
+                                                            </li>
+                                                            <li><a href="#" class="page-numbers">4</a>
+                                                            </li>
+                                                            <li><span class="page-numbers dots">...</span>
+                                                            </li>
+                                                            <li><a href="#" class="page-numbers">20</a>
+                                                            </li>
+                                                            <li><a href="#" class="page-numbers next">Next</a>
+                                                            </li>
+                                                        </ul>
+                                                        <!-- End Page Pagination -->
+                                                    </nav>
+                                                </div>
+                                                <!-- End Page Pagination -->
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Store Tabs Area -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Page Container -->
+
+
+        </main>
+        
